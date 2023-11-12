@@ -5,6 +5,8 @@
  */
 package gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author edyar
@@ -197,7 +199,16 @@ public class AplikasiPertambahanDuaAngkaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
-        System.exit(0);
+        // Menampilkan dialog konfirmasi
+        int jawaban = JOptionPane.showConfirmDialog(this, "Anda yakin ingin keluar?", "Konfirmasi Keluar", JOptionPane.YES_NO_OPTION);
+
+        // Jika pengguna memilih "Ya" (YES_OPTION), maka keluar dari aplikasi
+        if (jawaban == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        } else {
+            // Jika pengguna memilih "Tidak" (NO_OPTION), tampilkan dialog informasi
+            JOptionPane.showMessageDialog(this, "Sila gunakan aplikasi kembali", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnKeluarActionPerformed
 
     private void btnHapusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHapusMouseClicked
